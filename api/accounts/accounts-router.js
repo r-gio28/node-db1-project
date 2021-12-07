@@ -6,7 +6,7 @@ router.get('/', (req, res, next) => {
   //  res.json([{},{}]) good way to test to see if endpoint is returning data. also try to throw error: throw new Error('something went wrong!')
     res.json('get accounts')
   } catch (err) {
-    next({ status: 422, message: 'this is horrible'})
+    next(err)
   }
 })
 
@@ -40,7 +40,7 @@ router.put('/:id', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
   // DO YOUR MAGIC
   try {
-    res.json('delete accounts')
+    res.json('delete account')
   } catch (err) {
     next(err)
   }
